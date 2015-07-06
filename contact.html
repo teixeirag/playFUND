@@ -59,26 +59,59 @@
 
             body {
                 background-color: #233447;
+                margin:0;
             }
 
-            .bigTextBox{
-
+            .wrap {
+                background-color: lightgrey;
+                margin: auto;
+                width: 800px;
+                height: 600px;
                 position: relative;
-                top: 400px;
-                left: -210px;
+                top:20px;
+                
+
+            }
+
+            .MessageTextBox {
+                margin: 0;
+                position: absolute;
+                top: 70%;
+                left: 10%;
+                height: 150px;
+                width: 700px;
+            }
+
+            /*.MessageTextBox{
+
+                position: absolute;
+                top: 100px;
+                left: 10px;
                 font-size: 40px;
-                width: 50%;
-                height: 50%;
+                width: 500px;
+                height: 250px;
                 border-radius: 0;
                 color: #566a7d;
             }
 
-            .FirstNameTextBox, .LastNameTextBox {
-                float: left;
-                position: relative;
-                top: 200px;
-                left: 105px;
+            .SubjectTextBox {
+                position:absolute;
+                top: 20px;
+                width: 50%;
             }
+
+            .FirstNameTextBox, .LastNameTextBox {
+                display: inline-block;
+                position: relative;
+                top: 250px;
+                left: 25%;
+                margin-right: 20px;
+                width: 119.875px;
+            }*/
+
+            
+
+
 
 
 
@@ -102,11 +135,15 @@
             </ul>
             </div>
         </nav>
+
         
-        <textarea placeholder="Hello" class="FirstNameTextBox"></textarea>
-        <textarea placeholder="Hello" class="LastNameTextBox"></textarea>
-        <textarea placeholder="Hello" class="SubjectTextBox"></textarea>
-        <textarea placeholder="Hello*" class="bigTextBox"></textarea>
+        <div class="wrap">
+        <textarea placeholder="first name" class="FirstNameTextBox"></textarea>
+        <textarea placeholder="last name" class="LastNameTextBox"></textarea>
+        <textarea placeholder="subject" class="SubjectTextBox"></textarea>
+        <textarea placeholder="Message box" class="MessageTextBox"></textarea>
+        </div>
+        
 
 
 
