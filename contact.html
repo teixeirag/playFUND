@@ -61,14 +61,23 @@
                 background-color: #233447;
             }
 
-            .form-control {
+            .bigTextBox{
+
                 position: relative;
-                top: 50px;
-                left: 50px;
+                top: 400px;
+                left: -210px;
                 font-size: 40px;
                 width: 50%;
                 height: 50%;
                 border-radius: 0;
+                color: #566a7d;
+            }
+
+            .FirstNameTextBox, .LastNameTextBox {
+                float: left;
+                position: relative;
+                top: 200px;
+                left: 105px;
             }
 
 
@@ -93,8 +102,11 @@
             </ul>
             </div>
         </nav>
-
-        <textarea placeholder="Hello" class="form-control" width="1000"></textarea>
+        
+        <textarea placeholder="Hello" class="FirstNameTextBox"></textarea>
+        <textarea placeholder="Hello" class="LastNameTextBox"></textarea>
+        <textarea placeholder="Hello" class="SubjectTextBox"></textarea>
+        <textarea placeholder="Hello*" class="bigTextBox"></textarea>
 
 
 
