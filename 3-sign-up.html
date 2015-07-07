@@ -17,7 +17,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<style type="text/css">
-    body {
+     body {
                 padding-bottom: 70px;
             }
 
@@ -51,23 +51,116 @@
                 color: red;
                 position: relative;
                 top: -7px;
-                left: 10px;
+                left: 1px;
             }
-            span.glyphicon:hover {
+            span.glyphicon-circle-ok:hover {
                 color: blue;
-            }
-
-            li.contact {
-                background-color: orange;
-                padding: 13px 14px;
-                color: #ce3c3e;
             }
 
             body {
                 background-color: #233447;
+                margin:0;
             }
 
+            .wrap {
+                background-color: #233447;
+                margin: auto;
+                width: 800px;
+                height: 550px;
+                position: relative;
+                top:20px;
+            }
 
+            .PasswordTextBox {
+                margin: 0;
+                position: absolute;
+                left: 50px;
+                bottom: 160px;
+                height: 150px;
+                width: 700px;
+                resize: none;
+                outline: none;
+                font-size: 20px;  
+            }
+
+            .EmailTextBox {
+                position: absolute;
+                bottom: 320px;
+                left: 50px;
+                width: 700px;
+                resize: none;
+                outline: none;
+                font-size: 20px;   
+            }
+
+            .FirstNameTextBox {
+                width: 340px;
+                position: absolute;
+                left: 50px;
+                bottom: 390px;
+                float: left;
+                resize: none;
+                outline: none;
+                font-size: 20px;
+                
+            }
+            .LastNameTextBox {
+                width: 340px;
+                position: absolute;
+                bottom: 390px;
+                right: 50px;
+                resize: none;
+                outline: none;
+                font-size: 20px;
+                
+            }
+
+            .communicateText {
+                margin: 0;
+                color: #d73c41;
+                position: absolute;
+                top: 5px;
+                left: 300px;
+                font-size: 60px;
+                text-decoration: underline;
+
+
+            }
+
+            .registerAccount {
+                position: relative;
+                bottom: -430px;
+                left: 250px;
+                color: white;
+                background-color: #d73c41;
+                width: 350px;
+                height: 60px;
+                font-size: 30px;
+                border-radius: 30px;
+                transition: all 0.3s ease;
+            }
+
+            .registerAccount:hover {
+                background-color: #bf1f2c;
+            }
+
+            div span.glyphicon {
+                color: white;
+                font-size: 1em;
+                position: relative;
+                top: 13px;
+                left: 23px;
+            }
+            div span.glyphicon:hover {
+                color: white
+
+            }
+
+            p {
+                position: relative;
+                left: 65px;
+                top: -35px;
+            }
 
 	</style>
 </head>
@@ -80,13 +173,24 @@
                 <a href="2-why.html" class="why"><li>Why</li></a>
                 <a href="3-sign-up.html" class="signup"><li>Sign-Up</li></a>
                 <a href="4-play.html" class="play"><li>Play</li></a>
-                <a href="5-gallery.html" class="gallery"><li>Gallery</li></a>
+                <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
                 <a href="6-team.html" class="team"><li>Team</li></a>
                 <a href="7-contact.html" class="contact"><li>Contact</li></a>
             </ul>
             </div>
         </nav>
 
+<div class="wrap">
+<div class="communicateText">Sign-Up</div>
+<textarea placeholder="First Name *" class="FirstNameTextBox" type="text"></textarea>
+<textarea placeholder="Last Name *" class="LastNameTextBox"></textarea>
+<textarea placeholder="E-mail *" class="=EmailTextBox"></textarea>
+<textarea placeholder="Password *" class="PasswordTextBox" value="Hello"></textarea>
+
+<div class="registerAccount">
+    <span class="glyphicon glyphicon-circle-ok" aria-hidden="true"><p>Create Account</p></span>
+</div>
+</div>
 
 
 </body>
