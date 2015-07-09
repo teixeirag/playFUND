@@ -151,7 +151,11 @@
 
             .sendMessage:hover {
                 background-color: #bf1f2c;
+                text-decoration: none;
+
             }
+
+            
 
             div span.glyphicon {
                 color: white;
@@ -169,7 +173,12 @@
                 position: relative;
                 left: 65px;
                 top: -35px;
+                text-decoration: none;
+
             }
+            
+
+
 
             
 
@@ -211,11 +220,13 @@
             <textarea placeholder="Subject *" class="SubjectTextBox"></textarea>
             <textarea placeholder="Message *" class="MessageTextBox" value="Hello"></textarea>
             
+            <a href="#">
             <div class="sendMessage">
                 <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                <p>Send Message</p>
+                <p style="text-decoration:none";>Send Message</p>
             </div>
-        </div>
+            </a>
+        
 
 
         <script>
@@ -224,6 +235,9 @@
                  sweetAlert('Sent!', '', 'success');
             })
         })
+
+        $('.sendMessage').parent().css('textDecoration','none')
+        $('.sendMessage').parent().css('outline','none')
            
 
         </script>
