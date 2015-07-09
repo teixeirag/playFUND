@@ -219,7 +219,12 @@
 
 
         <script>
-            sweetAlert('Sent!', 'Check Your Inbox To Get Started', 'success');
+        $(document).ready(function(){
+            $(".sendMessage").click(function(){
+                 sweetAlert('Sent!', '', 'success');
+            })
+        })
+           
 
         </script>
 
