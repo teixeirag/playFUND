@@ -73,13 +73,12 @@
 
             p {
                 padding-left: 100px;
-                padding-right: 100px;
-                text-align: justify;
+                position: relative;
+                top: -35px;
+                
             }
 
-            .btn btn-primary btn-lg {
-                text-align: center;
-            }
+
 
             h1 {
                 padding-bottom: 20px;
@@ -94,44 +93,71 @@
 
             
 
-            .container {
-width: 100%;
-height: 100%;
-position: absolute;
-padding:0;
-margin:0;
-left: 0px;
-top: 0px;
-z-index: -1000;
-overflow:hidden;
-}
+                        .container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding:0;
+            margin:0;
+            left: 0px;
+            top: 0px;
+            z-index: -1000;
+            overflow:hidden;
+            }
 
-.video {
-    min-height: 100%;
-    //min-width:100%; - if fit to width
-position:absolute;
-bottom:0;
-left:0;
--webkit-filter: blur(2px) grayscale(.5) opacity(0.8);
-
-
-}
+            .video {
+                min-height: 100%;
+                //min-width:100%; - if fit to width
+            position:absolute;
+            bottom:0;
+            left:0;
+            -webkit-filter: blur(2px) grayscale(.5) opacity(0.8);
 
 
-.signUp {
+            }
+
+
+            .signUp {
                 position: relative;
-                bottom: -430px;
-                left: 250px;
-                top: 10px;
+                bottom: -410px;
+                left: 950px;
+                top: 400px;
                 color: white;
                 background-color: #d73c41;
-                width: 290px;
+                width:320px;
+                margin: 0;
                 height: 60px;
                 font-size: 30px;
                 border-radius: 30px;
                 transition: all 0.3s ease;
 
 
+
+            }
+
+            .signUp2 {
+                position: absolute;
+                top: 500px;
+                left: 50px;
+                top: 400px;
+                color: white;
+                background-color: #d73c41;
+                width:300px;
+                height: 60px;
+                font-size: 30px;
+                border-radius: 30px;
+                transition: all 0.3s ease;
+                margin: 0;
+
+            }
+
+            .signUp2 {
+                padding-left: -100px; 
+            }
+
+            .signUp2:hover {
+                background-color: #bf1f2c;
+                text-decoration: none;
 
             }
 
@@ -156,20 +182,29 @@ left:0;
 
             }
 
-            p {
-                position: relative;
-                left: 65px;
-                top: -35px;
+
+
+            .signUp p {
+                font-size: 1.em;
+                 position:absolute;
+                 top:8px;
+                 left: -10px;
                 text-decoration: none;
                 float: left;
-
+                /*margin-left: -75px;
+*/
             }
+
+
+
+
+            
 
             h3 {
                 color: red;
                 position: relative;
                 top: 370px;
-                left: -200px;
+                left: -100px;
             }
 
 
@@ -183,8 +218,8 @@ left:0;
             <a href="" class="navbar-brand"><span class="glyphicon glyphicon-jpy" aria-hidden="true"></span></a>
             <ul>
                 <a href="1-home.html" class="home"><li>Home</li></a>
-                <a href="2-why.html" class="why"><li>Why</li></a>
-                <a href="3-sign-up.html" class="signup"><li>Sign-Up</li></a>
+                
+                <a href="signupform.html" class="signup"><li>Sign-Up</li></a>
                 <a href="4-play.html" class="play"><li>Play</li></a>
                 <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
                 <a href="6-team.html" class="team"><li>Team</li></a>
@@ -193,17 +228,7 @@ left:0;
             </div>
         </nav>
 
-        <!-- <div class="jumbotron">
-          <h1>playFUND</h1>
-          <h3>Want To Have Fun Playing Video Games While Helping The World?</h3>
-          <p class="place">playFUND aims to provide an accessible philanthropic platform - through gaming!</p>
-          <h3>How it Works</h3>
-        <p>1) Sign-up for an account, 2) Load a small amount of money, 3) Choose a charity or organization to represent, and 4) Challenge your global friend base in nostaligic arcade and Internet games. Before matches start, players determine an amount of money to wager - from $0.01 to $20. The winning player gets the wagered amount of money donated to their selected casue AND, in most cases, monetary amounts are matched by organizations and playFUND donors. In the playFUND community, we have fun, interact with global citizens, and contribute to greater causes.</p>
-        <h3>We're All Winners!</h3>
-        <div id="go-button">
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Go playFUND</a></p>
-        </div>
-        </div> -->
+    
 
         <div class="container">
         <video autoplay class="video" muted loop>
@@ -215,25 +240,28 @@ left:0;
 
         <a href="#">
             <div class="signUp">
-                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                <p style="text-decoration:none">Send Message</p>
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <p style="text-decoration:none">Play Now</p>
             </div>
             </a>
 
 
             <a href="#">
-            <div class="playNow">
-                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                <p style="text-decoration:none">Send Message</p>
+            <div class="signUp2">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <p style="text-decoration:none">Sign Up</p>
             </div>
             </a>
+
+
+            
 
             <a href="#">
             <h3>Learn More</h3>
             </a>
 
             <script type="text/javascript">
-            
+
 
             </script>
 </body>

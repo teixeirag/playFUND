@@ -15,6 +15,21 @@
 		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
 		<link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
 		<script src="js/modernizr.custom.js"></script>
+		<style type="text/css">
+
+		.button {
+			background-color: red;
+			color: white;
+			border-radius: 70px;
+			width: 70px;
+			height: 40px;
+			position: relative;
+			top: 1200px;
+			left: 500px;
+
+		}
+
+		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -57,17 +72,23 @@
 						
 						
 					</ol><!-- /fs-fields -->
-					<button class="fs-submit" type="submit">Submit</button>
+					
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 
 			
 
 		</div><!-- /container -->
+
+		<a href="done.html">
+			<button class="button">Submit</button>
+		</a>
 		<script src="js/classie.js"></script>
 		<script src="js/selectFx.js"></script>
 		<script src="js/fullscreenForm.js"></script>
 		<script>
+
+		$(document).ready(function(){});
 			(function() {
 				var formWrap = document.getElementById( 'fs-form-wrap' );
 

@@ -1,91 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
-        <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-
-        /*navigation-bar*/
-        body {
-				padding-bottom: 70px;
-			}
-
-			 li {
-			 	position: relative;
-			 	top: 10px;
-			 	left: 20px;
-			 	display: inline;
-				transition: all 0.1s ease;
-				background-color: transparent;
-				font-size: 20px;
-				color: #e1e7d3;
-				padding: 13px 14px
-				
- 			}
-
- 			li:hover {
- 				background-color: #44576a;
- 				padding: 13px 14px;
- 				color: #ce3c3e;
- 			}
-			.nav {
-				background-color: #566a7d;
-			}
-			.btn {
-				border: 4px solid red;
-				padding:12px 14px 12px 14px;
-			}
-			span.glyphicon {
-    			font-size: 2em;
-    			color: red;
-    			position: relative;
-    			top: -7px;
-    			left: 10px;
-    			transition: all 0.3s ease;
-    		}
-    		span.glyphicon:hover {
-    			color: blue;
-    		}
-    		/*end of navigation-bar*/
-
-    		/*start of pong game*/
-		    		canvas {
-				display: block;
-				position: absolute;
-				margin: auto;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				width: 400px;
-				height: 400px;
-
-			}
-			/*end of pong game*/
-
-			body {
-				background-color: #233447;
-			}
-
-        </style>   
-    </head>
-
-    <body>
-       
-        <nav class="nav navbar navbar-fixed-bottom">
-			<a href="#" class="navbar-brand"><span class="glyphicon glyphicon-jpy" aria-hidden="true"></span></a>
-			<ul><!DOCTYPE html>
-<html>
 
 <head>
 <title>playFUND - Home</title>
@@ -153,35 +67,61 @@
                 background-color: #233447;
             }
 
-            .account-button {
-            	display: inline-block;;
-            	background-color: #566a7d;
-            }
+            
 
-            #account-button-1 {
-				position: absolute;
-				top: 5%;
-				margin-left: 250px;
-				margin-right: 0px;
-				width: 300px;
-            }
+			canvas {
+				position: relative;
+				top: 50px;
+				left: 420px;
+				width: 400px;
+				height: 400px;
 
-			#account-button-2 {
-				position: absolute;
-				top: 5%;
-				margin-right: 500px;
-				margin-left: 850px;
-				width: 300px;
 			}
 
-			.wager {
+			.player1 {
+				width: 250px;
+				height: 60px;
 				position: absolute;
-				display: inline-block;
-				margin-bottom: 1%;
-				margin-top: 45%;
-				margin-left: 38%;
-				margin-right: auto;
-				width: 25em;
+				top: 50px;
+				left: 90px;
+				border: 1px solid red;
+				border-radius: 70px;
+				background-color: #d73c41;
+				opacity: 0.9;
+
+
+			}
+
+			.player2 {
+				width: 250px;
+				height: 60px;
+				position: absolute;
+				top: 50px;
+				right: 90px;
+				border: 1px solid red;
+				border-radius: 70px;
+				background-color: red;
+				opacity: 0.9;
+
+			}
+
+			.wagers {
+				position: absolute;
+				bottom: 105px;
+				left: 425px;
+				border: 4px solid red;
+				}
+
+				.money {
+					height: 50px;
+					width: 190px;
+					color: green;
+			}
+
+			.organization {
+				height: 50px;
+				width: 190px;
+			}
 			}
 
 
@@ -193,8 +133,7 @@
             <a href="" class="navbar-brand"><span class="glyphicon glyphicon-jpy" aria-hidden="true"></span></a>
             <ul>
                 <a href="1-home.html" class="home"><li>Home</li></a>
-                <a href="2-why.html" class="why"><li>Why</li></a>
-                <a href="3-sign-up.html" class="signup"><li>Sign-Up</li></a>
+                <a href="signupform.html" class="signup"><li>Sign-Up</li></a>
                 <a href="4-play.html" class="play"><li>Play</li></a>
                 <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
                 <a href="6-team.html" class="team"><li>Team</li></a>
@@ -203,32 +142,41 @@
             </div>
         </nav>
 
+        
+        
+		
+		<div class="wagers">
+       	<button class="money">Wager: $2.00</button>
+       	<button class="organization">Organization: St.Judes</button>
+       	</div>
 
 
-</body>
+       	
 
-</html>
-				<a href="1-home.html" class="home"><li>Home</li></a>
-                <a href="2-why.html" class="why"><li>Why</li></a>
-                <a href="3-sign-up.html" class="signup"><li>Sign-Up</li></a>
-                <a href="4-play.html" class="play"><li>Play</li></a>
-                <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
-                <a href="6-team.html" class="team"><li>Team</li></a>
-                <a href="7-contact.html" class="contact"><li>Contact</li></a>
-			</ul>
-			</div>
-		</nav>
+       		<button class="player1 btn btn-default kenny " data-container="body" data-toggle="popover" data-placement="bottom" data-content="Gareth brings a Political Science and writing background to playFUND. He is also a NYCDA student and oversees content writing for the playFUND team. One fun fact: Gareth lives in Brooklyn by way of Hawaii and Minnesota.">Player 1: Gareth</button>
 
-		<div class="account-button">
-			<div id="account-button-1"
-				<button type="button" class="btn btn-primary btn-lg btn-block">Player 1: Gareth</button>
-			</div>
-			<div id="account-button-2">
-				<button type="button" class="btn btn-primary btn-lg btn-block">Player 2: Kenny</button>
-			</div>
-		</div>
 
-        <script>
+       		<button class="player2 btn btn-default kenny " data-container="body" data-toggle="popover" data-placement="bottom" data-content="Kenny is a coding phenom, who is currently an Intern at NYCDA and a student in the Web Development 100 Course. He enjoys staying up on the latest tech trends, particularly Apple gadgets, and almost exclusively wears Hollister clothing. Kenny is the mastermind behind playFUND games.">Player 2: Kenny</button>
+    
+    
+
+
+
+       	<script type="text/javascript">
+    
+
+    $(document).ready(function(){
+        
+        $(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+        
+
+    });
+</script>
+
+       	 <script>
 			    var
 			/**
 			 * Constants
@@ -452,9 +400,14 @@
 			            
         </script>
 
-        <div class="wager">
-        	<button type="button" class="btn btn-primary btn-lg btn-block">Match Wager: $0.25</button>
-        </div>
 
-    </body>
+
+		
+
+
+
+
+
+</body>
+
 </html>
