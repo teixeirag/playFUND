@@ -97,6 +97,45 @@
                 position: absolute;
             }
 
+            .kenny { 
+
+                position: relative;
+                top:50px;
+                left:200px;
+
+            }
+
+            .sponge { 
+
+                position: relative;
+                top:50px;
+                left:300px;
+
+            }
+
+            .patrick { 
+
+                position: relative;
+                top:50px;
+                left:400px;
+
+            }
+
+            .btn,img {
+                border: none;
+                width: 180px;
+                height: 180px;
+                border-radius: 90px;
+                background: transparent;
+            }
+
+            .btn:hover{
+                background: transparent;
+                border: 1px solid transparent;
+            }
+
+
+
 	</style>
 </head>
 
@@ -115,7 +154,7 @@
             </div>
         </nav>
 
-<div class="jumbotron">
+<!-- <div class="jumbotron">
 <h1>playFUND</h1>
 <h3>Our Team</h3>
 <h3>Kenny Batista</h3>
@@ -123,10 +162,55 @@
 <h3>Daniel Mejia</h3>
 <p>Danny comes to playFUND with a background in Communications and is also a Web Development 100 student at NYCDA. He's a diehard New York sports fan and the Graphic Design expert at playFUND.</p>
 <h3>Gareth Teixeira</h3>
-<p>Gareth brings a Political Science and writing background to playFUND. He is also a NYCDA student and oversees content writing for the playFUND team. One fun fact: Gareth lives in Brooklyn by way of Hawaii and Minnesota.</p>
+<p>Gareth brings a Political Science and writing background to playFUND. He is also a NYCDA student and oversees content writing for the playFUND team. One fun fact: Gareth lives in Brooklyn by way of Hawaii and Minnesota.</p> -->
+<!-- 
+<a href="#">
+<img src="kenny.png" width="140px" height="140px" class="btn btn-lg btn-danger img-circle kenny" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" style="border-radius:90px">
+</a>
+
+<img src="sponge.png" class="img-circle sponge" width="140px" height="140px">
+
+<img src="patrick.png" class="img-circle patrick" width="140px" height="140px">
 
 
+<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" >h</button>
 
+
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on top
+</button> -->
+
+<a href="#"  class="btn btn-default kenny " data-container="body" data-toggle="popover" data-placement="bottom" data-content="Kenny is a coding phenom, who is currently an Intern at NYCDA and a student in the Web Development 100 Course. He enjoys staying up on the latest tech trends, particularly Apple gadgets, and almost exclusively wears Hollister clothing. Kenny is the mastermind behind playFUND games.">
+    
+    <img src="kenny.png">
+</a>
+
+<a href="#"  class="btn btn-default sponge" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Danny comes to playFUND with a background in Communications and is also a Web Development 100 student at NYCDA. He's a diehard New York sports fan and the Graphic Design expert at playFUND.">
+    
+    <img src="sponge.png">
+</a>
+
+<a href="#"  class="btn btn-default patrick" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Gareth brings a Political Science and writing background to playFUND. He is also a NYCDA student and oversees content writing for the playFUND team. One fun fact: Gareth lives in Brooklyn by way of Hawaii and Minnesota.">
+    
+    <img src="patrick.png">
+</a>
+
+
+<script type="text/javascript">
+    
+
+    $(document).ready(function(){
+        
+        $(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+        $(".btn").click(function(){
+            $(this).css("background", "transparent")
+        })
+
+    });
+</script>
 </body>
 
 </html>
