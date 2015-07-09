@@ -25,7 +25,7 @@
 			 	top: 10px;
 			 	left: 20px;
 			 	display: inline;
-				transition: all 0.3s ease;
+				transition: all 0.1s ease;
 				background-color: transparent;
 				font-size: 20px;
 				color: #e1e7d3;
@@ -291,9 +291,9 @@
 						y: this.speed*Math.sin(phi)
 					}
 				},
-				/**
-				 * Update the ball position and keep it within the canvas
-				 */
+				
+				 // Update the ball position and keep it within the canvas
+				
 				update: function() {
 					// update position with current velocity
 					this.x += this.vel.x;
@@ -333,17 +333,17 @@
 						this.serve(pdle===player ? 1 : -1);
 					}
 				},
-				/**
-				 * Draw the ball to the canvas
-				 */
+
+				//draw the ball to the canvas.
+
 				draw: function() {
 					ctx.fillRect(this.x, this.y, this.side, this.side);
 
 				}
 			};
-			/**
-			 * Starts the game
-			 */
+			
+			 // Starts the game
+			 
 			function main() {
 				// create, initiate and append game canvas
 				canvas = document.createElement("canvas");
@@ -360,6 +360,7 @@
 					delete keystate[evt.keyCode];
 				});
 				init(); // initiate game objects
+
 				// game loop function
 				var loop = function() {
 					update();
@@ -368,9 +369,9 @@
 				};
 				window.requestAnimationFrame(loop, canvas);
 			}
-			/**
-			 * Initatite game objects and set start positions
-			 */
+
+			// Initialize game and set start positions.
+
 			function init() {
 				player.x = player.width;
 				player.y = (HEIGHT - player.height)/2;
@@ -378,25 +379,26 @@
 				ai.y = (HEIGHT - ai.height)/2;
 				ball.serve(1);
 			}
-			/**
-			 * Update all game objects
-			 */
+			
+			// update all game objects.
+
 			function update() {
 				ball.update();
 				player.update();
 				ai.update();
 			}
-			/**
-			 * Clear canvas and draw all game objects and net
-			 */
+			
+			// Clear canvas and draw all game objects and net
+			 
 			function draw() {
 				ctx.fillRect(0, 0, WIDTH, HEIGHT);
 				ctx.save();
-				ctx.fillStyle = "#ee0000";
+				ctx.fillStyle = "#ee0000"; //color of the paddle and ball
 				ball.draw();
 				player.draw();
 				ai.draw();
-				// draw the net
+
+				// This will draw the net
 				var w = 4;
 				var x = (WIDTH - w)*0.5;
 				var y = 0;
@@ -407,7 +409,7 @@
 				}
 				ctx.restore();
 			}
-			// start and run the game
+			// This function wills start the game.
 			main();
 			            
         </script>
