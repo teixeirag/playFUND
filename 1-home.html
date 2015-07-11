@@ -1,270 +1,225 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-<title>playFUND - Home</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="plAID.js"></script>
-	<link type="text/css" rel="stylesheet" href="plAID.css" />
-    <link href="css/hover.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <title>playFUND - Home</title>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    	<script src="plAID.js"></script>
+    	<link type="text/css" rel="stylesheet" href="plAID.css" />
+        <link href="css/hover.css" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
         <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+        </script>
 
-	<style type="text/css">
-    body {
-                padding-bottom: 70px;
-            }
+    	<style type="text/css">
 
-             li {
-                position: relative;
-                top: 10px;
-                left: 20px;
-                display: inline;
-                transition: all 0.3s ease;
-                background-color: transparent;
-                font-size: 20px;
-                color: #e1e7d3;
-                padding: 13px 14px
+                 body {
+                    padding-bottom: 70px;
+                    background-color: #233447;
+                }
+
+                 li {
+                    position: relative;
+                    top: 10px;
+                    left: 20px;
+                    display: inline;
+                    transition: all 0.3s ease;
+                    background-color: transparent;
+                    font-size: 20px;
+                    color: #e1e7d3;
+                    padding: 13px 14px 
+                }
+
+                li:hover {
+                    background-color: #44576a;
+                    padding: 13px 14px;
+                    color: #ce3c3e;
+                }
+
+                .nav {
+                    background-color: #566a7d;
+                }
+
+                .btn {
+                    padding:12px 14px 12px 14px;
+                }
+                span.glyphicon {
+                    font-size: 2em;
+                    color: red;
+                    position: relative;
+                    top: -7px;
+                    left: 10px;
+                }
+                span.glyphicon:hover {
+                    color: blue;
+                }
+
+                li.contact {
+                    background-color: orange;
+                    padding: 13px 14px;
+                    color: #ce3c3e;
+                }
+
                 
-            }
 
-            li:hover {
-                background-color: #44576a;
-                padding: 13px 14px;
-                color: #ce3c3e;
-            }
-            .nav {
-                background-color: #566a7d;
-            }
-            .btn {
+                h1, h3 {
+                    text-align: center;
+                }
+
+                p {
+                    padding-left: 100px;
+                    position: relative;
+                    top: -35px; 
+                }
+
+                h1 {
+                    padding-bottom: 20px;
+                }
+
+                h3 {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    color: white;
+                    position: relative;
+                    top: 430px;
+                    left: 540px;
+                    background-color: #d73c41;
+                    width: 200px;
+                    border-radius: 40px;
+                }
+
+                .container {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    padding:0;
+                    margin:0;
+                    left: 0px;
+                    top: 0px;
+                    z-index: -1000;
+                    overflow:hidden;
+                }
+
+                .video {
+                    min-height: 100%;
+                    min-width:100%; - if fit to width
+                    position:absolute;
+                    bottom:0;
+                    left:0;
+                    -webkit-filter: blur(2px) grayscale(.5) opacity(0.8);
+                }
+
+                .signUp {
+                    position: relative;
+                    bottom: -410px;
+                    left: 950px;
+                    top: 400px;
+                    color: white;
+                    background-color: #d73c41;
+                    width:320px;
+                    margin: 0;
+                    height: 60px;
+                    font-size: 30px;
+                    border-radius: 30px;
+                    transition: all 0.3s ease;
+                    border:none;
+                }
+
+                .signUp2 {
+                    position: absolute;
+                    top: 500px;
+                    left: 50px;
+                    top: 400px;
+                    color: white;
+                    background-color: #d73c41;
+                    width:300px;
+                    height: 60px;
+                    font-size: 30px;
+                    border-radius: 30px;
+                    transition: all 0.3s ease;
+                    margin: 0;
+                    border:none;
+                    padding-left: -100px;
+                }
+
+                .signUp2:hover {
+                    background-color: #bf1f2c;
+                    text-decoration: none;
+
+                }
+
+                .signUp:hover {
+                    background-color: #bf1f2c;
+                    text-decoration: none;
+                }
+
+                div span.glyphicon {
+                    color: white;
+                    font-size: 1em;
+                    position: relative;
+                    top: 13px;
+                    left: 23px;
+                }
+
+                div span.glyphicon:hover {
+                    color: white
+
+                }
+
+                .signUp p {
+                    font-size: 1.em;
+                    position:absolute;
+                    top:8px;
+                    left: -10px;
+                    text-decoration: none;
+                    float: left;                   
+                }
+    	</style>
+    </head>
+
+    <body>
+        <nav class="nav navbar navbar-fixed-bottom">
+                    <a href="" class="navbar-brand"><span class="glyphicon glyphicon-jpy" aria-hidden="true"></span></a>
+
+                    <ul>
+                        <a href="1-home.html" class="home"><li>Home</li></a>
+                         <a href="2-how.html" class="how"><li>How It Works</li></a>
+                        <a href="signupform.html" class="signup"><li>Sign-Up</li></a>
+                        <a href="4-play.html" class="play"><li>Play</li></a>
+                        <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
+                        <a href="6-team.html" class="team"><li>Team</li></a>
+                        <a href="7-contact.html" class="contact"><li>Contact</li></a>
+                    </ul>
+                </nav>
+
+                <div class="container">
+                    <video autoplay class="video" muted loop>  
+                        <source src="wwe.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <a href="4-play.html">
+                    <div class="signUp">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <p style="text-decoration:none">Play Now</p>
+                    </div>
+                </a>
+
+                <a href="signupform.html">
+                    <div class="signUp2">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        <p style="text-decoration:none">Sign Up</p>
+                    </div>
+                </a>
                 
-                padding:12px 14px 12px 14px;
-            }
-            span.glyphicon {
-                font-size: 2em;
-                color: red;
-                position: relative;
-                top: -7px;
-                left: 10px;
-            }
-            span.glyphicon:hover {
-                color: blue;
-            }
-
-            li.contact {
-                background-color: orange;
-                padding: 13px 14px;
-                color: #ce3c3e;
-            }
-
-            body {
-                background-color: #233447;
-            }
-
-            h1, h3 {
-                text-align: center;
-            }
-
-            p {
-                padding-left: 100px;
-                position: relative;
-                top: -35px;
-                
-            }
-
-
-
-            h1 {
-                padding-bottom: 20px;
-            }
-
-            h3 {
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-
-            
-
-            
-
-                        .container {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            padding:0;
-            margin:0;
-            left: 0px;
-            top: 0px;
-            z-index: -1000;
-            overflow:hidden;
-            }
-
-            .video {
-                min-height: 100%;
-                //min-width:100%; - if fit to width
-            position:absolute;
-            bottom:0;
-            left:0;
-            -webkit-filter: blur(2px) grayscale(.5) opacity(0.8);
-
-
-            }
-
-
-            .signUp {
-                position: relative;
-                bottom: -410px;
-                left: 950px;
-                top: 400px;
-                color: white;
-                background-color: #d73c41;
-                width:320px;
-                margin: 0;
-                height: 60px;
-                font-size: 30px;
-                border-radius: 30px;
-                transition: all 0.3s ease;
-                border:none;
-
-
-
-            }
-
-            .signUp2 {
-                position: absolute;
-                top: 500px;
-                left: 50px;
-                top: 400px;
-                color: white;
-                background-color: #d73c41;
-                width:300px;
-                height: 60px;
-                font-size: 30px;
-                border-radius: 30px;
-                transition: all 0.3s ease;
-                margin: 0;
-                border:none;
-
-            }
-
-            .signUp2 {
-                padding-left: -100px; 
-            }
-
-            .signUp2:hover {
-                background-color: #bf1f2c;
-                text-decoration: none;
-
-            }
-
-            .signUp:hover {
-                background-color: #bf1f2c;
-                text-decoration: none;
-
-            }
-
-
-            div span.glyphicon {
-                color: white;
-                font-size: 1em;
-                position: relative;
-                top: 13px;
-                left: 23px;
-            }
-            div span.glyphicon:hover {
-                color: white
-
-
-
-            }
-
-
-
-            .signUp p {
-                font-size: 1.em;
-                 position:absolute;
-                 top:8px;
-                 left: -10px;
-                text-decoration: none;
-                float: left;
-                /*margin-left: -75px;
-*/
-            }
-
-
-            h3 {
-                color: white;
-                position: relative;
-                top: 430px;
-                left: 540px;
-                background-color: #d73c41;
-                width: 200px;
-                border-radius: 40px;
-            }
-
-
-
-
-	</style>
-</head>
-
-<body>
-<nav class="nav navbar navbar-fixed-bottom">
-            <a href="" class="navbar-brand"><span class="glyphicon glyphicon-jpy" aria-hidden="true"></span></a>
-            <ul>
-                <a href="1-home.html" class="home"><li>Home</li></a>
-                 <a href="2-how.html" class="how"><li>How It Works</li></a>
-                <a href="signupform.html" class="signup"><li>Sign-Up</li></a>
-                <a href="4-play.html" class="play"><li>Play</li></a>
-                <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
-                <a href="6-team.html" class="team"><li>Team</li></a>
-                <a href="7-contact.html" class="contact"><li>Contact</li></a>
-            </ul>
-            </div>
-        </nav>
-
-    
-
-        <div class="container">
-        <video autoplay class="video" muted loop>
-            
-        <source src="wwe.mp4" type="video/mp4">
-
-        </video>
-        </div>
-
-        <a href="4-play.html">
-            <div class="signUp">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <p style="text-decoration:none">Play Now</p>
-            </div>
-            </a>
-
-
-            <a href="signupform.html">
-            <div class="signUp2">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <p style="text-decoration:none">Sign Up</p>
-            </div>
-            </a>
-
-
-            
-
-            <a href="2-how.html">
-            <h3>Learn More</h3>
-            </a>
-
-            <script type="text/javascript">
-
-
-            </script>
-</body>
+                <a href="2-how.html">
+                    <h3>Learn More</h3>
+                </a>     
+    </body>
 
 </html>
