@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-<title>playFUND - Contact</title>
+    <head>
+    <title>playFUND - Contact</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="plAID.js"></script>
     <script src="sweetalert-master/dist/sweetalert.min.js"></script>
@@ -12,243 +11,194 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<style type="text/css">
-    body {
-                padding-bottom: 70px;
-            }
+                body {
+                    padding-bottom: 70px;
+                    background-color: #233447;
+                    margin:0;
+                }
 
-             li {
-                position: relative;
-                top: 10px;
-                left: 20px;
-                display: inline;
-                transition: all 0.3s ease;
-                background-color: transparent;
-                font-size: 20px;
-                color: #e1e7d3;
-                padding: 13px 14px
+                 li {
+                    position: relative;
+                    top: 10px;
+                    left: 20px;
+                    display: inline;
+                    transition: all 0.3s ease;
+                    background-color: transparent;
+                    font-size: 20px;
+                    color: #e1e7d3;
+                    padding: 13px 14px
+                    
+                }
+
+                li:hover {
+                    background-color: #44576a;
+                    padding: 13px 14px;
+                    color: #ce3c3e;
+                }
+                .nav {
+                    background-color: #566a7d;
+                }
+                .btn {
+                    border: 4px solid red;
+                    padding:12px 14px 12px 14px;
+                }
+                span.glyphicon {
+                    font-size: 2em;
+                    color: red;
+                    position: relative;
+                    top: -7px;
+                    left: 10px;
+                }
+                span.glyphicon:hover {
+                    color: blue;
+                }
+
+                .wrap {
+                    background-color: #233447;
+                    margin: auto;
+                    width: 800px;
+                    height: 550px;
+                    position: relative;
+                    top:20px;
+                }
+
+                .MessageTextBox {
+                    margin: 0;
+                    position: absolute;
+                    left: 50px;
+                    bottom: 160px;
+                    height: 150px;
+                    width: 700px;
+                    resize: none;
+                    outline: none;
+                    font-size: 20px;                   
+                }
+
+                .SubjectTextBox {
+                    position: absolute;
+                    bottom: 320px;
+                    left: 50px;
+                    width: 700px;
+                    resize: none;
+                    outline: none;
+                    font-size: 20px;                   
+                }
+
+                .FirstNameTextBox {
+                    width: 340px;
+                    position: absolute;
+                    left: 50px;
+                    bottom: 390px;
+                    float: left;
+                    resize: none;
+                    outline: none;
+                    font-size: 20px;                    
+                }
+
+                .LastNameTextBox {
+                    width: 340px;
+                    position: absolute;
+                    bottom: 390px;
+                    right: 50px;
+                    resize: none;
+                    outline: none;
+                    font-size: 20px;                    
+                }
+
+                .communicateText {
+                    margin: 0;
+                    color: #d73c41;
+                    position: absolute;
+                    top: 5px;
+                    left: 210px;
+                    font-size: 60px;
+                    text-decoration: underline;
+                }
+
+                .sendMessage {
+                    position: relative;
+                    bottom: -430px;
+                    left: 250px;
+                    color: white;
+                    background-color: #d73c41;
+                    width: 290px;
+                    height: 60px;
+                    font-size: 30px;
+                    border-radius: 30px;
+                    transition: all 0.3s ease;
+                }
+
+                .sendMessage:hover {
+                    background-color: #bf1f2c;
+                    text-decoration: none;
+               }
+
+                div span.glyphicon {
+                    color: white;
+                    font-size: 1em;
+                    position: relative;
+                    top: 13px;
+                    left: 23px;
+                }
+                div span.glyphicon:hover {
+                    color: white
+                }
+
+                p {
+                    position: relative;
+                    left: 65px;
+                    top: -35px;
+                    text-decoration: none;
+                }
+         
+    	</style>
+    </head>
+
+    <body>
+    <nav class="nav navbar navbar-fixed-bottom">
+                <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-jpy" aria-hidden="true"></span></a>
+                <ul>
+                    <a href="1-home.html" class="home"><li>Home</li></a>
+                    <a href="2-how.html" class="how"><li>How It Works</li></a>
+                    <a href="signupform.html" class="signup"><li>Sign-Up</li></a>
+                    <a href="4-play.html" class="play"><li>Play</li></a>
+                    <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
+                    <a href="6-team.html" class="team"><li>Team</li></a>
+                    <a href="7-contact.html" class="contact"><li>Contact</li></a>
+                </ul>
+                </div>
+            </nav>
+     
+            <div class="wrap">
+                <div class="communicateText">Communicate</div>
+                <textarea placeholder="First Name *" class="FirstNameTextBox" type="text"></textarea>
+                <textarea placeholder="Last Name *" class="LastNameTextBox"></textarea>
+                <textarea placeholder="Subject *" class="SubjectTextBox"></textarea>
+                <textarea placeholder="Message *" class="MessageTextBox" value="Hello"></textarea>
                 
-            }
-
-            li:hover {
-                background-color: #44576a;
-                padding: 13px 14px;
-                color: #ce3c3e;
-            }
-            .nav {
-                background-color: #566a7d;
-            }
-            .btn {
-                border: 4px solid red;
-                padding:12px 14px 12px 14px;
-            }
-            span.glyphicon {
-                font-size: 2em;
-                color: red;
-                position: relative;
-                top: -7px;
-                left: 10px;
-            }
-            span.glyphicon:hover {
-                color: blue;
-            }
-
-            body {
-                background-color: #233447;
-                margin:0;
-            }
-
-            .wrap {
-                background-color: #233447;
-                margin: auto;
-                width: 800px;
-                height: 550px;
-                position: relative;
-                top:20px;
-                
-
-            }
-
-            .MessageTextBox {
-                margin: 0;
-                position: absolute;
-                left: 50px;
-                bottom: 160px;
-                height: 150px;
-                width: 700px;
-                resize: none;
-                outline: none;
-                font-size: 20px;
-                
-            }
-
-            .SubjectTextBox {
-                position: absolute;
-                bottom: 320px;
-                left: 50px;
-                width: 700px;
-                resize: none;
-                outline: none;
-                font-size: 20px;
-                
-            }
-
-            .FirstNameTextBox {
-                width: 340px;
-                position: absolute;
-                left: 50px;
-                bottom: 390px;
-                float: left;
-                resize: none;
-                outline: none;
-                font-size: 20px;
-                
-            }
-            .LastNameTextBox {
-                width: 340px;
-                position: absolute;
-                bottom: 390px;
-                right: 50px;
-                resize: none;
-                outline: none;
-                font-size: 20px;
-                
-            }
-
-            .communicateText {
-                margin: 0;
-                color: #d73c41;
-                position: absolute;
-                top: 5px;
-                left: 210px;
-                font-size: 60px;
-                text-decoration: underline;
-
-
-            }
-
-            .sendMessage {
-                position: relative;
-                bottom: -430px;
-                left: 250px;
-                color: white;
-                background-color: #d73c41;
-                width: 290px;
-                height: 60px;
-                font-size: 30px;
-                border-radius: 30px;
-                transition: all 0.3s ease;
-
-
-
-            }
-
-            .sendMessage:hover {
-                background-color: #bf1f2c;
-                text-decoration: none;
-
-            }
-
-            
-
-            div span.glyphicon {
-                color: white;
-                font-size: 1em;
-                position: relative;
-                top: 13px;
-                left: 23px;
-            }
-            div span.glyphicon:hover {
-                color: white
-
-            }
-
-            p {
-                position: relative;
-                left: 65px;
-                top: -35px;
-                text-decoration: none;
-
-            }
-            
-
-
-
-            
-
-
-
-
-            
-
-            
-
-
-
-
-
-
-	</style>
-</head>
-
-<body>
-<nav class="nav navbar navbar-fixed-bottom">
-            <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-jpy" aria-hidden="true"></span></a>
-            <ul>
-                <a href="1-home.html" class="home"><li>Home</li></a>
-                <a href="2-how.html" class="how"><li>How It Works</li></a>
-                <a href="signupform.html" class="signup"><li>Sign-Up</li></a>
-                <a href="4-play.html" class="play"><li>Play</li></a>
-                <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
-                <a href="6-team.html" class="team"><li>Team</li></a>
-                <a href="7-contact.html" class="contact"><li>Contact</li></a>
-            </ul>
-            </div>
-        </nav>
-
-        
-        <div class="wrap">
-            <div class="communicateText">Communicate</div>
-            <textarea placeholder="First Name *" class="FirstNameTextBox" type="text"></textarea>
-            <textarea placeholder="Last Name *" class="LastNameTextBox"></textarea>
-            <textarea placeholder="Subject *" class="SubjectTextBox"></textarea>
-            <textarea placeholder="Message *" class="MessageTextBox" value="Hello"></textarea>
-            
-            <a href="#">
-            <div class="sendMessage">
-                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                <p style="text-decoration:none">Send Message</p>
-            </div>
-            </a>
-        
-
-
-        <script>
-        $(document).ready(function(){
-            $(".sendMessage").click(function(){
-                 sweetAlert('Sent!', '', 'success');
-            })
-        })
-
-        $('.sendMessage').parent().css('textDecoration','none')
-        $('.sendMessage').parent().css('outline','none')
+                <a href="#">
+                    <div class="sendMessage">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        <p style="text-decoration:none">Send Message</p>
+                    </div>
+                </a>
            
+            <script>
+                $(document).ready(function(){
+                    $(".sendMessage").click(function(){
+                         sweetAlert('Sent!', '', 'success');
+                    })
+                })            
 
-        </script>
-
-       
-
-        
-        
-
-
-
-</body>
-
+                $('.sendMessage').parent().css('textDecoration','none')
+                $('.sendMessage').parent().css('outline','none')  
+            </script>
+    </body>
 </html>
