@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<style type="text/css">
-    body {
+    		body {
                 padding-bottom: 70px;
+                background-color: #233447;
             }
 
              li {
@@ -63,12 +64,6 @@
                 color: #ce3c3e;
             }
 
-            body {
-                background-color: #233447;
-            }
-
-            
-
 			canvas {
 				position: relative;
 				top: 50px;
@@ -112,303 +107,262 @@
 				border: 4px solid red;
 				}
 
-				.money {
-					height: 50px;
-					width: 190px;
-					color: green;
-			}
+			.money {
+				height: 50px;
+				width: 190px;
+				color: green;
+				}
 
 			.organization {
 				height: 50px;
 				width: 190px;
 			}
-			}
-
-
+		
 	</style>
 </head>
-
-<body>
-<nav class="nav navbar navbar-fixed-bottom">
+	<body>
+		<nav class="nav navbar navbar-fixed-bottom">
             <a href="" class="navbar-brand"><span class="glyphicon glyphicon-jpy" aria-hidden="true"></span></a>
-            <ul>
-                <a href="1-home.html" class="home"><li>Home</li></a>
-                 <a href="2-how.html" class="how"><li>How It Works</li></a>
-                <a href="signupform.html" class="signup"><li>Sign-Up</li></a>
-                <a href="4-play.html" class="play"><li>Play</li></a>
-                <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
-                <a href="6-team.html" class="team"><li>Team</li></a>
-                <a href="7-contact.html" class="contact"><li>Contact</li></a>
-            </ul>
-            </div>
-        </nav>
-
-        
-        
-		
-		<div class="wagers">
-       	<button class="money">Wager: $2.00</button>
-       	<button class="organization">Organization: St.Judes</button>
-       	</div>
-
-
-       	
+	            <ul>
+	                <a href="1-home.html" class="home"><li>Home</li></a>
+	                <a href="2-how.html" class="how"><li>How It Works</li></a>
+	                <a href="signupform.html" class="signup"><li>Sign-Up</li></a>
+	                <a href="4-play.html" class="play"><li>Play</li></a>
+	                <a href="5-upcoming.html" class="upcoming"><li>Upcoming</li></a>
+	                <a href="6-team.html" class="team"><li>Team</li></a>
+	                <a href="7-contact.html" class="contact"><li>Contact</li></a>
+	            </ul>
+	        </nav>
+	
+			<div class="wagers">
+		       	<button class="money">Wager: $2.00</button>
+		       	<button class="organization">Organization: St.Judes</button>
+	       	</div>
 
        		<button class="player1 btn btn-default kenny " data-container="body" data-toggle="popover" data-placement="bottom" data-content="Gareth brings a Political Science and writing background to playFUND. He is also a NYCDA student and oversees content writing for the playFUND team. One fun fact: Gareth lives in Brooklyn by way of Hawaii and Minnesota.">Player 1: Gareth</button>
 
 
        		<button class="player2 btn btn-default kenny " data-container="body" data-toggle="popover" data-placement="bottom" data-content="Kenny is a coding phenom, who is currently an Intern at NYCDA and a student in the Web Development 100 Course. He enjoys staying up on the latest tech trends, particularly Apple gadgets, and almost exclusively wears Hollister clothing. Kenny is the mastermind behind playFUND games.">Player 2: Kenny</button>
-    
-    
+	    
+		<script type="text/javascript">
+
+		    $(document).ready(function(){
+		        
+		        $(function () {
+		  $('[data-toggle="popover"]').popover()
+			})
+
+			    });
+		</script>
+
+		       	 <script>
+					    var
+					WIDTH  = 700,
+					HEIGHT = 600,
+					pi = Math.PI,
+					UpArrow   = 38,
+					DownArrow = 40,
+					
+					// game element
+					canvas,
+					ctx,
+					keystate,
+					
+					//the player paddle
+
+					player = {
+						x: null,
+						y: null,
+						width:  20,
+						height: 100,
+
+						//update
+						update: function() {
+							if (keystate[UpArrow]) this.y -= 7;
+							if (keystate[DownArrow]) this.y += 7;
+							// keep the paddle inside of the canvas
+							this.y = Math.max(Math.min(this.y, HEIGHT - this.height), 0);
+						},
+						
+						//paddle on the canvas
+						draw: function() {
+							ctx.fillRect(this.x, this.y, this.width, this.height);
+						}
+					},
+					
+
+					//ai's paddle
+					ai = {
+						x: null,
+						y: null,
+						width:  20,
+						height: 100,
+						
+
+						//update the position
+						update: function() {
+							// calculate ideal position
+							var desty = ball.y - (this.height - ball.side)*0.5;
+							// ease the movement towards the ideal position
+							this.y += (desty - this.y) * 0.1;
+							// keep the paddle inside of the canvas
+							this.y = Math.max(Math.min(this.y, HEIGHT - this.height), 0);
+						},
+						
 
 
+						draw: function() {
+							ctx.fillRect(this.x, this.y, this.width, this.height);
+						}
+					},
 
-       	<script type="text/javascript">
-    
+					//the ball
+					ball = {
+						x:   null,
+						y:   null,
+						vel: null,
+						side:  20,
+						speed: 9,
+						/**
+						 * Serves the ball towards the specified side
+						 * 
+						 * @param  {number} side 1 right
+						 *                       -1 left
+						 */
+						serve: function(side) {
+							// set the x and y position
+							var r = Math.random();
+							this.x = side===1 ? player.x+player.width : ai.x - this.side;
+							this.y = (HEIGHT - this.side)*r;
+							// calculate out-angle, higher/lower on the y-axis =>
+							// steeper angle
+							var phi = 0.1*pi*(1 - 2*r);
+							// set velocity direction and magnitude
+							this.vel = {
+								x: side*this.speed*Math.cos(phi),
+								y: this.speed*Math.sin(phi)
+							}
+						},
+						
+						 // Update the ball position and keep it within the canvas
+						
+						update: function() {
+							// update position with current velocity
+							this.x += this.vel.x;
+							this.y += this.vel.y;
+							// check if out of the canvas in the y direction
+							if (0 > this.y || this.y+this.side > HEIGHT) {
+								// calculate and add the right offset, i.e. how far
+								// inside of the canvas the ball is
+								var offset = this.vel.y < 0 ? 0 - this.y : HEIGHT - (this.y+this.side);
+								this.y += 2*offset;
+								// mirror the y velocity
+								this.vel.y *= -1;
+							}
+							// helper function to check intesectiont between two
+							// axis aligned bounding boxex (AABB)
+							var AABBIntersect = function(ax, ay, aw, ah, bx, by, bw, bh) {
+								return ax < bx+bw && ay < by+bh && bx < ax+aw && by < ay+ah;
+							};
+							// check againts target paddle to check collision in x
+							// direction
+							var pdle = this.vel.x < 0 ? player : ai;
+							if (AABBIntersect(pdle.x, pdle.y, pdle.width, pdle.height,
+									this.x, this.y, this.side, this.side)
+							) {	
+								// set the x position and calculate reflection angle
+								this.x = pdle===player ? player.x+player.width : ai.x - this.side;
+								var n = (this.y+this.side - pdle.y)/(pdle.height+this.side);
+								var phi = 0.25*pi*(2*n - 1); // pi/4 = 45
+								// calculate smash value and update velocity
+								var smash = Math.abs(phi) > 0.2*pi ? 1.5 : 1;
+								this.vel.x = smash*(pdle===player ? 1 : -1)*this.speed*Math.cos(phi);
+								this.vel.y = smash*this.speed*Math.sin(phi);
+							}
+							// reset the ball when ball outside of the canvas in the
+							// x direction
+							if (0 > this.x+this.side || this.x > WIDTH) {
+								this.serve(pdle===player ? 1 : -1);
+							}
+						},
 
-    $(document).ready(function(){
-        
-        $(function () {
-  $('[data-toggle="popover"]').popover()
-})
+						//draw the ball to the canvas.
 
-        
+						draw: function() {
+							ctx.fillRect(this.x, this.y, this.side, this.side);
 
-    });
-</script>
-
-       	 <script>
-			    var
-			/**
-			 * Constants
-			 */
-			WIDTH  = 700,
-			HEIGHT = 600,
-			pi = Math.PI,
-			UpArrow   = 38,
-			DownArrow = 40,
-			/**
-			 * Game elements
-			 */
-			canvas,
-			ctx,
-			keystate,
-			/**
-			 * The player paddle
-			 * 
-			 * @type {Object}
-			 */
-			player = {
-				x: null,
-				y: null,
-				width:  20,
-				height: 100,
-				/**
-				 * Update the position depending on pressed keys
-				 */
-				update: function() {
-					if (keystate[UpArrow]) this.y -= 7;
-					if (keystate[DownArrow]) this.y += 7;
-					// keep the paddle inside of the canvas
-					this.y = Math.max(Math.min(this.y, HEIGHT - this.height), 0);
-				},
-				/**
-				 * Draw the player paddle to the canvas
-				 */
-				draw: function() {
-					ctx.fillRect(this.x, this.y, this.width, this.height);
-				}
-			},
-			/**
-			 * The ai paddle
-			 * 
-			 * @type {Object}
-			 */
-			ai = {
-				x: null,
-				y: null,
-				width:  20,
-				height: 100,
-				/**
-				 * Update the position depending on the ball position
-				 */
-				update: function() {
-					// calculate ideal position
-					var desty = ball.y - (this.height - ball.side)*0.5;
-					// ease the movement towards the ideal position
-					this.y += (desty - this.y) * 0.1;
-					// keep the paddle inside of the canvas
-					this.y = Math.max(Math.min(this.y, HEIGHT - this.height), 0);
-				},
-				/**
-				 * Draw the ai paddle to the canvas
-				 */
-				draw: function() {
-					ctx.fillRect(this.x, this.y, this.width, this.height);
-				}
-			},
-			/**	
-			 * The ball object
-			 * 
-			 * @type {Object}
-			 */
-			ball = {
-				x:   null,
-				y:   null,
-				vel: null,
-				side:  20,
-				speed: 9,
-				/**
-				 * Serves the ball towards the specified side
-				 * 
-				 * @param  {number} side 1 right
-				 *                       -1 left
-				 */
-				serve: function(side) {
-					// set the x and y position
-					var r = Math.random();
-					this.x = side===1 ? player.x+player.width : ai.x - this.side;
-					this.y = (HEIGHT - this.side)*r;
-					// calculate out-angle, higher/lower on the y-axis =>
-					// steeper angle
-					var phi = 0.1*pi*(1 - 2*r);
-					// set velocity direction and magnitude
-					this.vel = {
-						x: side*this.speed*Math.cos(phi),
-						y: this.speed*Math.sin(phi)
-					}
-				},
-				
-				 // Update the ball position and keep it within the canvas
-				
-				update: function() {
-					// update position with current velocity
-					this.x += this.vel.x;
-					this.y += this.vel.y;
-					// check if out of the canvas in the y direction
-					if (0 > this.y || this.y+this.side > HEIGHT) {
-						// calculate and add the right offset, i.e. how far
-						// inside of the canvas the ball is
-						var offset = this.vel.y < 0 ? 0 - this.y : HEIGHT - (this.y+this.side);
-						this.y += 2*offset;
-						// mirror the y velocity
-						this.vel.y *= -1;
-					}
-					// helper function to check intesectiont between two
-					// axis aligned bounding boxex (AABB)
-					var AABBIntersect = function(ax, ay, aw, ah, bx, by, bw, bh) {
-						return ax < bx+bw && ay < by+bh && bx < ax+aw && by < ay+ah;
+						}
 					};
-					// check againts target paddle to check collision in x
-					// direction
-					var pdle = this.vel.x < 0 ? player : ai;
-					if (AABBIntersect(pdle.x, pdle.y, pdle.width, pdle.height,
-							this.x, this.y, this.side, this.side)
-					) {	
-						// set the x position and calculate reflection angle
-						this.x = pdle===player ? player.x+player.width : ai.x - this.side;
-						var n = (this.y+this.side - pdle.y)/(pdle.height+this.side);
-						var phi = 0.25*pi*(2*n - 1); // pi/4 = 45
-						// calculate smash value and update velocity
-						var smash = Math.abs(phi) > 0.2*pi ? 1.5 : 1;
-						this.vel.x = smash*(pdle===player ? 1 : -1)*this.speed*Math.cos(phi);
-						this.vel.y = smash*this.speed*Math.sin(phi);
+					
+					 // Starts the game
+					 
+					function main() {
+						// create, initiate and append game canvas
+						canvas = document.createElement("canvas");
+						canvas.width = WIDTH;
+						canvas.height = HEIGHT;
+						ctx = canvas.getContext("2d");
+						document.body.appendChild(canvas);
+						keystate = {};
+						// keep track of keyboard presses
+						document.addEventListener("keydown", function(evt) {
+							keystate[evt.keyCode] = true;
+						});
+						document.addEventListener("keyup", function(evt) {
+							delete keystate[evt.keyCode];
+						});
+						init(); // initiate game objects
+
+						// game loop function
+						var loop = function() {
+							update();
+							draw();
+							window.requestAnimationFrame(loop, canvas);
+						};
+						window.requestAnimationFrame(loop, canvas);
 					}
-					// reset the ball when ball outside of the canvas in the
-					// x direction
-					if (0 > this.x+this.side || this.x > WIDTH) {
-						this.serve(pdle===player ? 1 : -1);
+
+					// Initialize game and set start positions.
+
+					function init() {
+						player.x = player.width;
+						player.y = (HEIGHT - player.height)/2;
+						ai.x = WIDTH - (player.width + ai.width);
+						ai.y = (HEIGHT - ai.height)/2;
+						ball.serve(1);
 					}
-				},
+					
+					// update all game objects.
 
-				//draw the ball to the canvas.
+					function update() {
+						ball.update();
+						player.update();
+						ai.update();
+					}
+					
+					// Clear canvas and draw all game objects and net
+					 
+					function draw() {
+						ctx.fillRect(0, 0, WIDTH, HEIGHT);
+						ctx.save();
+						ctx.fillStyle = "#ee0000"; //color of the paddle and ball
+						ball.draw();
+						player.draw();
+						ai.draw();
 
-				draw: function() {
-					ctx.fillRect(this.x, this.y, this.side, this.side);
-
-				}
-			};
-			
-			 // Starts the game
-			 
-			function main() {
-				// create, initiate and append game canvas
-				canvas = document.createElement("canvas");
-				canvas.width = WIDTH;
-				canvas.height = HEIGHT;
-				ctx = canvas.getContext("2d");
-				document.body.appendChild(canvas);
-				keystate = {};
-				// keep track of keyboard presses
-				document.addEventListener("keydown", function(evt) {
-					keystate[evt.keyCode] = true;
-				});
-				document.addEventListener("keyup", function(evt) {
-					delete keystate[evt.keyCode];
-				});
-				init(); // initiate game objects
-
-				// game loop function
-				var loop = function() {
-					update();
-					draw();
-					window.requestAnimationFrame(loop, canvas);
-				};
-				window.requestAnimationFrame(loop, canvas);
-			}
-
-			// Initialize game and set start positions.
-
-			function init() {
-				player.x = player.width;
-				player.y = (HEIGHT - player.height)/2;
-				ai.x = WIDTH - (player.width + ai.width);
-				ai.y = (HEIGHT - ai.height)/2;
-				ball.serve(1);
-			}
-			
-			// update all game objects.
-
-			function update() {
-				ball.update();
-				player.update();
-				ai.update();
-			}
-			
-			// Clear canvas and draw all game objects and net
-			 
-			function draw() {
-				ctx.fillRect(0, 0, WIDTH, HEIGHT);
-				ctx.save();
-				ctx.fillStyle = "#ee0000"; //color of the paddle and ball
-				ball.draw();
-				player.draw();
-				ai.draw();
-
-				// This will draw the net
-				var w = 4;
-				var x = (WIDTH - w)*0.5;
-				var y = 0;
-				var step = HEIGHT/200; // how many net segments
-				while (y < HEIGHT) {
-					ctx.fillRect(x, y+step*0.25, w, step*0.5);
-					y += step;
-				}
-				ctx.restore();
-			}
-			// This function wills start the game.
-			main();
-			            
-        </script>
-
-
-
-		
-
-
-
-
-
-</body>
-
+						// This will draw the net
+						var w = 4;
+						var x = (WIDTH - w)*0.5;
+						var y = 0;
+						var step = HEIGHT/200; // how many net segments
+						while (y < HEIGHT) {
+							ctx.fillRect(x, y+step*0.25, w, step*0.5);
+							y += step;
+						}
+						ctx.restore();
+					}
+					// This function wills start the game.
+					main();	            
+		  </script>
+	</body>
 </html>
